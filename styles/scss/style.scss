@@ -1,0 +1,9 @@
+$bg_color : lightblue;
+$font_color : coral;
+
+body{
+  background-color:$bg_color;
+  h1 {
+    color: $font_color
+  }
+}
