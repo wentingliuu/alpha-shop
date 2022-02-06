@@ -1,5 +1,5 @@
 body {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   color: var(--body-color);
   background: var(--body-bg);
 }
@@ -38,20 +38,6 @@ p {
   margin: 0 auto;
 }
 
-%position-center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@mixin img-setting($w, $h, $bg) {
-  display: block;
-  width: $w;
-  height: $h;
-  background: $bg;
-  background-size: contain;
-}
-
 @media screen and (min-width: 376px) {
   .container {
     width: 90%;
@@ -59,3 +45,5 @@ p {
     max-width: 1110px;
   }
 }
+
+/*# sourceMappingURL=basic.css.map */

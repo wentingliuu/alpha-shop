@@ -5,6 +5,8 @@
   --footer-bg: #F6F7F8;
   --footer-color: #808080;
 
+  --nav-bg: rgba(255, 255, 255, 0.97);
+
   --step-checked: #FFFFFF;
   --step-checked-bg: #333333;
   --step-unselected: #AFB1BD;
@@ -36,6 +38,12 @@
   --cart-btn-bg: #F0F0F5;
   --cart-text-light: #2A2A2A;
   --cart-text-bold: #000000;
+
+  --img-logo: url("../../images/logo@3x.png");
+  --icon-search: url("../../images/icon-search@3x.png");
+  --icon-cart: url("../../images/icon-cart@3x.png");
+  --icon-mode: url("../../images/icon-mode@3x.png");
+  --hamburger: url("../../images/hamburger@3x.png");
 }
 
 [data-theme="dark"] {
@@ -44,6 +52,8 @@
 
   --footer-bg: #333333;
   --footer-color: rgba(255, 255, 255, 0.6);
+
+  --nav-bg: rgba(18, 18, 18, 0.97);
 
   --step-checked: #FFFFFF;
   --step-checked-bg: #333333;
@@ -74,4 +84,10 @@
   --cart-btn-bg: #808080;
   --cart-text-light: #FFFFFF;
   --cart-text-bold: #FFFFFF;
+
+  --img-logo: url("../../images/d-logo@3x.png");
+  --icon-search: url("../../images/d-icon-search@3x.png");
+  --icon-cart: url("../../images/d-icon-cart@3x.png");
+  --icon-mode: url("../../images/d-icon-mode@3x.png");
+  --hamburger: url("../../images/d-hamburger@3x.png");
 }

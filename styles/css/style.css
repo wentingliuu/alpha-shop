@@ -71,6 +71,7 @@ a:focus {
   --body-color: #2A2A2A;
   --footer-bg: #F6F7F8;
   --footer-color: #808080;
+  --nav-bg: rgba(255, 255, 255, 0.97);
   --step-checked: #FFFFFF;
   --step-checked-bg: #333333;
   --step-unselected: #AFB1BD;
@@ -96,6 +97,11 @@ a:focus {
   --cart-btn-bg: #F0F0F5;
   --cart-text-light: #2A2A2A;
   --cart-text-bold: #000000;
+  --img-logo: url("../../images/logo@3x.png");
+  --icon-search: url("../../images/icon-search@3x.png");
+  --icon-cart: url("../../images/icon-cart@3x.png");
+  --icon-mode: url("../../images/icon-mode@3x.png");
+  --hamburger: url("../../images/hamburger@3x.png");
 }
 
 [data-theme=dark] {
@@ -103,6 +109,7 @@ a:focus {
   --body-color: #FFFFFF;
   --footer-bg: #333333;
   --footer-color: rgba(255, 255, 255, 0.6);
+  --nav-bg: rgba(18, 18, 18, 0.97);
   --step-checked: #FFFFFF;
   --step-checked-bg: #333333;
   --step-unselected: rgba(255, 255, 255, 0.4);
@@ -127,12 +134,17 @@ a:focus {
   --cart-btn-bg: #808080;
   --cart-text-light: #FFFFFF;
   --cart-text-bold: #FFFFFF;
+  --img-logo: url("../../images/d-logo@3x.png");
+  --icon-search: url("../../images/d-icon-search@3x.png");
+  --icon-cart: url("../../images/d-icon-cart@3x.png");
+  --icon-mode: url("../../images/d-icon-mode@3x.png");
+  --hamburger: url("../../images/d-hamburger@3x.png");
 }
 
 body {
   font-family: "Noto Sans TC", sans-serif;
   color: var(--body-color);
-  background-color: var(--body-bg);
+  background: var(--body-bg);
 }
 
 h1 {
@@ -169,12 +181,161 @@ p {
   margin: 0 auto;
 }
 
+header .nav__brand {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media screen and (min-width: 376px) {
   .container {
     width: 90%;
     padding: 0;
     max-width: 1110px;
   }
+}
+header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  height: 56px;
+  width: 100%;
+}
+header .nav__brand {
+  display: block;
+  width: 135.86px;
+  height: 24px;
+  background: var(--img-logo);
+  background-size: contain;
+  position: absolute;
+  z-index: 1;
+}
+header .nav__toggle__label {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--hamburger);
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .nav__toggle {
+  display: none;
+  position: absolute;
+}
+header .nav__toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+header .nav__toggle:checked ~ nav li {
+  transition: opacity 0.2s ease-in 0.2s;
+  opacity: 1;
+}
+header .nav__toggle:checked ~ nav .nav__icons {
+  transition: opacity 0.2s ease-in 0.2s;
+  opacity: 1;
+}
+header nav {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  text-align: center;
+  background: var(--nav-bg);
+  /* toggle */
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.3s ease-out;
+}
+header nav ul {
+  margin: 0 auto;
+}
+header nav ul li {
+  position: relative;
+  height: 72px;
+  line-height: 72px;
+  opacity: 0;
+}
+header nav ul li::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 90%;
+  height: 2px;
+  background: rgba(42, 42, 42, 0.1);
+}
+header nav .nav__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 152px;
+  height: 72px;
+  opacity: 0;
+}
+header nav .nav__icons .nav__icon--search {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--icon-search);
+  background-size: contain;
+}
+header nav .nav__icons .nav__icon--cart {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--icon-cart);
+  background-size: contain;
+}
+header nav .nav__icons .nav__icon--mode {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--icon-mode);
+  background-size: contain;
+}
+
+@media screen and (min-width: 376px) {
+  header {
+    height: 60px;
+  }
+  header .nav__brand {
+    width: 169.83px;
+    height: 30px;
+  }
+  header .nav__toggle__label {
+    display: none;
+  }
+  header nav {
+    all: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav ul {
+    display: flex;
+    margin: 0;
+  }
+  header nav ul li {
+    height: 60px;
+    line-height: 60px;
+    opacity: 1;
+    margin-right: 32px;
+  }
+  header nav ul li::after {
+    all: unset;
+  }
+  header nav .nav__icons {
+    width: 132px;
+    height: 24px;
+    opacity: 1;
+    margin: 0;
+  }
+}
+main, footer {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

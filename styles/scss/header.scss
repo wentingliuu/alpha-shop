@@ -1,0 +1,147 @@
+header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  height: 56px;
+  width: 100%;
+
+  .nav__brand {
+    @include img-setting(135.86px, 24px, var(--img-logo));
+    @extend %position-center;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .nav__toggle__label {
+    @include img-setting(24px, 24px, var(--hamburger));
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .nav__toggle {
+    display: none;
+    position: absolute;
+
+    &:checked {
+      ~ nav {
+        transform: scale(1, 1);
+        li {
+          transition: opacity 0.2s ease-in 0.2s;
+          opacity: 1;
+        }
+        .nav__icons{ 
+          transition: opacity 0.2s ease-in 0.2s;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  nav {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    background: var(--nav-bg);
+
+    /* toggle */
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+
+    ul {
+      margin: 0 auto;
+
+      li {
+        position: relative;
+        height: 72px;
+        line-height: 72px;
+        opacity: 0;
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+
+          content: "";
+          width: 90%;
+          height: 2px;
+          background: rgba(42, 42, 42, 0.1);          
+        }
+      }
+    }
+
+    .nav__icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+
+      width: 152px;
+      height: 72px;
+
+      opacity: 0;
+
+      .nav__icon--search {
+        @include img-setting(24px, 24px, var(--icon-search));
+      }
+      .nav__icon--cart {
+        @include img-setting(24px, 24px, var(--icon-cart));
+      }
+      .nav__icon--mode {
+        @include img-setting(24px, 24px, var(--icon-mode));
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 376px) {
+  header {
+    height: 60px;
+
+    .nav__brand {
+      width: 169.83px;
+      height: 30px;
+    }
+
+    .nav__toggle__label {
+      display: none;
+    }
+    
+    nav {
+      all: unset;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      ul {
+        display: flex;
+        margin: 0;
+
+        li {
+          height: 60px;
+          line-height: 60px;
+          opacity: 1;
+          margin-right: 32px;
+          &::after {
+            all: unset;
+          }
+        }
+      }
+
+      .nav__icons {
+        width: 132px;
+        height: 24px;
+        opacity: 1;
+        margin: 0;
+      }
+    }
+  }
+}
+
+main, footer {
+  display: none;
+}
