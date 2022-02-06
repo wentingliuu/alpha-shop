@@ -1,84 +1,21 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-}
-
-ul,
-ol,
-li {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-a,
-a:hover,
-a:active,
-a:visited,
-a:focus {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-button,
-button:hover,
-button:active,
-button:focus {
-  border: 0;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-button[disabled] {
-  pointer-events: none;
-}
-
-input:focus,
-textarea:focus,
-select,
-select:focus,
-a:focus {
-  outline: none;
-}
-
 :root {
   --body-bg: #FFFFFF;
   --body-color: #2A2A2A;
+
   --footer-bg: #F6F7F8;
   --footer-color: #808080;
+
   --step-checked: #FFFFFF;
   --step-checked-bg: #333333;
   --step-unselected: #AFB1BD;
   --step-line: #000000;
+
   --form-input-label: #808080;
   --form-input-content: #999999;
   --form-input-outline: #4A4A4A;
+
   --form-shipment-selected-outline: #2A2A2A;
+
   --form-shipment-color-main: #000000;
   --form-shipment-color-secondary: #000000;
   --form-shipment-selected-outline: #2A2A2A;
@@ -86,10 +23,13 @@ a:focus {
   --form-shipment-selected-dot: #FFFFFF;
   --form-shipment-unselected-outline: #F0F0F5;
   --form-shipment-unselected-btn: #222222;
+
   --btn-previous: #000000;
   --btn-next: #FFFFFF;
   --btn-next-bg: #F67599;
+
   --divider: #E6E6EB;
+
   --cart-bg: #FFFFFF;
   --cart-outline: #F0F0F5;
   --cart-btn-color: #000000;
@@ -98,18 +38,22 @@ a:focus {
   --cart-text-bold: #000000;
 }
 
-[data-theme=dark] {
+[data-theme="dark"] {
   --body-bg: #121212;
   --body-color: #FFFFFF;
+
   --footer-bg: #333333;
   --footer-color: rgba(255, 255, 255, 0.6);
+
   --step-checked: #FFFFFF;
   --step-checked-bg: #333333;
   --step-unselected: rgba(255, 255, 255, 0.4);
   --step-line: #FFFFFF;
+
   --form-input-label: rgba(255, 255, 255, 0.4);
   --form-input-content: rgba(255, 255, 255, 0.4);
   --form-input-outline: #5E5E5E;
+
   --form-shipment-color-main: #FFFFFF;
   --form-shipment-color-secondary: rgba(255, 255, 255, 0.4);
   --form-shipment-selected-outline: #FFFFFF;
@@ -117,10 +61,13 @@ a:focus {
   --form-shipment-selected-dot: #FFFFFF;
   --form-shipment-unselected-outline: #5E5E5E;
   --form-shipment-unselected-btn: #333333;
+
   --btn-previous: #FFFFFF;
   --btn-next: #FFFFFF;
   --btn-next-bg: #F67599;
+
   --divider: rgba(255, 255, 255, 0.2);
+
   --cart-bg: #383838;
   --cart-outline: rgba(255, 255, 255, 0.2);
   --cart-btn-color: #333333;
@@ -128,53 +75,3 @@ a:focus {
   --cart-text-light: #FFFFFF;
   --cart-text-bold: #FFFFFF;
 }
-
-body {
-  font-family: "Noto Sans TC", sans-serif;
-  color: var(--body-color);
-  background-color: var(--body-bg);
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: Bold;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: Bold;
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: Bold;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-h5 {
-  font-size: 14px;
-}
-
-p {
-  font-size: 12px;
-}
-
-.container {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 376px) {
-  .container {
-    width: 90%;
-    padding: 0;
-    max-width: 1110px;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
