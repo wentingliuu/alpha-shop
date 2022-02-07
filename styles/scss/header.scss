@@ -5,6 +5,8 @@ header {
   height: 56px;
   width: 100%;
 
+  background: var(--body-bg);
+
   .nav__brand {
     @include img-setting(135.86px, 24px, var(--img-logo));
     @extend %position-center;
@@ -101,12 +103,20 @@ header {
 @media screen and (min-width: 376px) {
   header {
     height: 60px;
-
+    
     .nav__brand {
       width: 169.83px;
       height: 30px;
     }
+    .nav__toggle__label {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
 
+@media screen and (min-width: 885px) {
+  header {
     .nav__toggle__label {
       display: none;
     }
@@ -120,12 +130,14 @@ header {
       ul {
         display: flex;
         margin: 0;
+        width: 35%;
+        display: flex;
+        justify-content: space-between;
 
         li {
           height: 60px;
           line-height: 60px;
           opacity: 1;
-          margin-right: 32px;
           &::after {
             all: unset;
           }
@@ -133,15 +145,11 @@ header {
       }
 
       .nav__icons {
-        width: 132px;
+        width: 12%;
         height: 24px;
         opacity: 1;
         margin: 0;
       }
     }
   }
-}
-
-main, footer {
-  display: none;
 }

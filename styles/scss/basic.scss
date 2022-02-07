@@ -1,11 +1,15 @@
+/* ===== general ===== */
 body {
   font-family: 'Noto Sans TC', sans-serif;
   color: var(--body-color);
   background: var(--body-bg);
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 32px;
+  line-height: 38px;
   font-weight: Bold;
 }
 
@@ -31,13 +35,7 @@ p {
   font-size: 12px;
 }
 
-.container {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-}
-
+/* ===== SASS ===== */
 %position-center {
   top: 50%;
   left: 50%;
@@ -52,10 +50,104 @@ p {
   background-size: contain;
 }
 
-@media screen and (min-width: 376px) {
+@mixin getStepNum($num) {
+  @for $i from 1 through $num { 
+    &:nth-of-type(#{$i}) .step__circle::after {
+      content: "#{$i}";
+    }
+  }
+}
+
+/* ===== basic settings ===== */
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+main {
+  height: calc(100vh - 56px);
+  margin-top: 56px;
+
+  .main__title {
+    padding-top: 16px;
+    font-size: 24px;
+    width: 100%;
+  }
+  .main__content__left{
+    margin-top: 24px;
+
+    form {
+      margin-top: 24px;
+    }
+  }
+  .main__content__right{
+    margin-top: 32px;
+
+    .cart__title {
+      display: none;
+    }
+  }
+}
+
+footer {
+  display: none;
+}
+
+/* ===== media query ===== */
+@media screen and (min-width: 768px) {
   .container {
     width: 90%;
     padding: 0;
     max-width: 1110px;
   }
+
+  main {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+
+    .main__title {
+      padding-top: 80px;
+      font-size: 32px;
+    }
+    .main__content{
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 2vw;
+
+      &__left, &__right {
+        margin-top: 0;
+      }
+      &__left {
+        grid-column: 1 / 7;
+        
+        form {
+          margin-top: 64px;
+          margin-bottom: 48px;
+          
+          .form__content {
+            height: 288px;
+          }
+          .form__btn {
+            height: 72px;
+          }
+        }
+      }
+      &__right {
+        grid-column: 8 / 13;
+      }
+    }
+  }
+  
+  footer {
+    display: initial;
+    height: 284px;
+    background: var(--footer-bg);
+  }
+}
+
+.d-none {
+  display: none;
 }
