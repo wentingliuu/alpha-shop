@@ -65,9 +65,27 @@
   }
 }
 
-@media screen and (min-width: 1050px) {
+@media screen and (min-width: 768px) {
   .stepper {
     height: 24px;
+    
+    .step {
+      .step__circle {
+        height: 24px;
+        width: 24px;
+        font-size: 12px;
+        line-height: 22px;
+        margin: 0;
+      }
+    }
+    .step__line {
+      margin-top: 11px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .stepper {
     grid-template-columns: 96px 1fr 96px 1fr 96px;
     
     .step { 
@@ -75,20 +93,9 @@
       justify-content: space-between;
       width: 96px;
 
-      .step__circle {
-        height: 24px;
-        width: 24px;
-
-        font-size: 12px;
-        line-height: 22px;
-        margin: 0;
-      }
       .step__label {
         display: initial;
       }
-    }
-    .step__line {
-      margin-top: 11px;
     }
   }
 }

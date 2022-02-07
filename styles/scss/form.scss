@@ -1,0 +1,211 @@
+.form__part {
+  > * {
+    margin-bottom: 24px;
+  }
+
+  > div {
+    height: 64px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* input 樣式調整 */
+    label {
+      font-size: 12px;
+      line-height: 16px;
+      color: var(--form-input-label);
+    }
+    input, select {
+      background-color: transparent;
+      color: var(--form-input-content);
+
+      width: 100%;
+      height: 40px;
+      border: 1px solid var(--form-input-outline);
+      border-radius: 4px;
+      font-size: 12px; 
+      padding: 12px 16px;
+    }
+    input {
+      &::placeholder {
+        color: var(--form-input-content);
+      }
+    }
+    select {
+      -webkit-appearance: none;
+      cursor: pointer;
+      color: var(--form-input-content);
+      &:valid {
+        color: var(--body-color);
+      }
+    }
+    .select-wrapper {
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        border-style: solid;
+        border-width: 5px 5px 0 5px;
+        border-color: var(--form-input-triangle) transparent transparent transparent;
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%); 
+        z-index: -1;
+      } 
+    }
+  }
+
+  /* shipping 選單樣式調整 */
+  .form__row--shipping {
+    position: relative;
+    border: 1px solid var(--form-shipment-outline);
+    border-radius: 4px;
+
+    flex-direction: row;
+    justify-content: start;
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      margin: 20px;
+      padding: 0;
+      border: 1px solid var(--form-shipment-btn);
+      border-radius: 50%;
+      background: var(--form-shipment-btn-bg);
+
+      &:checked {
+        box-shadow: inset 0 0 0 5px var(--form-shipment-checked-btn);
+        background: var(--body-bg);
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -1px;
+          bottom: -1px;
+          left: -1px;
+          right: -1px;
+          border: 1px solid var(--body-color);
+          border-radius: 4px;
+        }
+      }
+    }
+    
+    label {
+      cursor: pointer;
+      width: calc(100% - 80px);
+      display: flex;
+      justify-content: space-between;
+      padding: 11px 0;
+
+      .shipping__des {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .shipping__subtitle {
+          font-size: 14px;
+          line-height: 20px;
+          color: var(--form-shipment-color-main);
+        }
+        .shipping__time {
+          font-size: 12px;
+          line-height: 16px;
+          color: var(--form-shipment-color-secondary);
+        }
+      }
+      .shipping__fee {
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--form-shipment-color-main);
+      }
+    }
+  }
+
+  /* form row 排版 */
+  &:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    grid-column-gap: 30px;
+
+    .form__title,
+    .form__row--phone,
+    .form__row--email,
+    .form__row--city,
+    .form__row--address {
+      grid-column: 1 / 3;
+    }
+  }
+  &:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+
+    .form__row--payname,
+    .form__row--paycard {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &.d-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form__part {
+    &:nth-of-type(1) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 30px;
+
+      .form__title {
+        grid-column: 1 / 7;
+      }
+      .form__row--gender,
+      .form__row--city {
+        grid-column: 1 / 3;
+      }
+      .form__row--name,
+      .form__row--address {
+        grid-column: 3 / 7;
+      }
+      .form__row--phone {
+        grid-column: 1 / 4;
+      }
+      .form__row--email {
+        grid-column: 4 / 7;
+      }
+    }
+    &:nth-of-type(3) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 30px;
+
+      .form__title {
+        grid-column: 1 / 7;
+      }
+      .form__row--payname,
+      .form__row--paycard {
+        grid-column: 1 / 5;
+      }
+      .form__row--payexp {
+        grid-column: 1 / 4;
+      }
+      .form__row--paycode {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &.d-none {
+      display: none;
+    }
+  }
+}
+
+footer {
+  display: none;
+}
