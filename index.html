@@ -65,12 +65,12 @@
         <div class="main__content__left">
           <!-- stepper -->
           <div class="stepper">
-            <div class="step checked">
+            <div class="step active">
               <div class="step__circle"></div>
               <h4 class="step__label">寄送地址</h4>
             </div>
             <span class="step__line"></span>
-            <div class="step active">
+            <div class="step">
               <div class="step__circle"></div>
               <h4 class="step__label">運送方式</h4>
             </div>
@@ -199,35 +199,8 @@
           <div class="cart">
             <h3 class="cart__title">購物籃</h3>
             <!-- cart items -->
-            <div class="cart__items">
-              <div class="cart__item" data-id="1">
-                <img src="./images/product-1@3x.png" alt="product image" class="item__img">
-                <div class="item__info">
-                  <div class="item__detail">
-                    <span class="item__name">破壞補釘修身牛仔褲</span>
-                    <div class="item__quantity">
-                      <div class="item__quantity--btn item__quantity--minus">－</div>
-                      <span class="item__quantity--number">1</span>
-                      <div class="item__quantity--btn item__quantity--plus">＋</div>
-                    </div>
-                  </div>
-                  <span class="item__price">$3,999</span>
-                </div>
-              </div>
-              <div class="cart__item" data-id="2">
-                <img src="./images/product-2@3x.png" alt="product image" class="item__img">
-                <div class="item__info">
-                  <div class="item__detail">
-                    <span class="item__name">刷色直筒牛仔褲</span>
-                    <div class="item__quantity">
-                      <div class="item__quantity--btn item__quantity--minus">－</div>
-                      <span class="item__quantity--number">1</span>
-                      <div class="item__quantity--btn item__quantity--plus">＋</div>
-                    </div>
-                  </div>
-                  <span class="item__price">$1,299</span>
-                </div>
-              </div>
+            <div id="cart__items" class="cart__items scrollbar">
+              <!-- ///// insert cart item here ///// -->
             </div>
             <!-- cart charge -->
             <div class="cart__shipping">

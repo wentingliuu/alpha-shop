@@ -8,7 +8,10 @@
     display: none;
   }
   .cart__items {
-    padding-bottom: 16px;
+    margin-top: 18px;
+    max-height: 237px; /* 2*(100px+18px) + 1 */
+    overflow-y: scroll;
+
     border-bottom: 1px solid var(--cart-outline);
   }
   .cart__shipping,
@@ -35,7 +38,7 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
-  margin-top: 18px;
+  margin-bottom: 18px;
 
   img {
     width: 100px;
@@ -102,7 +105,8 @@
     }
     .cart__items {
       margin-top: 34px;
-      padding-bottom: 0;
+      max-height: 265px; /* 2*(100px+32px) + 1 */
+
       .cart__item {
         margin-bottom: 32px;
       }

@@ -75,6 +75,23 @@ p {
   }
 }
 
+/* ===== scroll bar ===== */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.scrollbar {
+  padding-left: 6px;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
 /* ===== basic settings ===== */
 .container {
   width: 100%;
