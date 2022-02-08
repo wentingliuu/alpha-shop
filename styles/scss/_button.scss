@@ -1,0 +1,66 @@
+.form__btn {
+  position: absolute;
+  bottom: calc(-110px - 422px);
+  /* button height + cart height */
+
+  /* pt + button height + pb */
+  height: calc(24px + 46px + 40px);
+  width: 100%;
+  border-top: 1px solid var(--divider);
+
+  padding: 24px 0 40px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    height: 46px;
+    width: 156px;
+    border-radius: 8px;
+    font-size: 14px;
+    &:hover {
+      opacity: 0.9;
+      font-weight: 700;
+    }
+  }
+  .form__btn--previous {
+    color: var(--btn-previous);
+    text-align: left;
+
+    span {
+      margin-right: 12.5px;
+    }
+
+    &[disabled] {
+      display: none;
+    }
+  }
+  .form__btn--next {
+    color: var(--btn-next);
+    background: var(--btn-next-bg);
+
+    span {
+      margin-left: 13.5px;
+    }
+    &.first-step {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form__btn {
+    position: initial;
+    border-top: 2px solid var(--divider);
+
+    button {
+      width: 174px;
+    }
+    .form__btn--next {
+      &.first-step {
+        width: 174px;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}

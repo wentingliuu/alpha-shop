@@ -257,6 +257,7 @@ footer {
   }
   main .main__content__left, main .main__content__right {
     margin-top: 0;
+    margin-bottom: 0;
   }
   main .main__content__left {
     grid-column: 1/7;
@@ -273,7 +274,7 @@ footer {
   }
 
   footer {
-    display: initial;
+    display: block;
     height: 284px;
     background: var(--footer-bg);
   }
@@ -707,6 +708,63 @@ header nav .nav__icons .nav__icon--mode {
   }
   .form__part.d-none {
     display: none;
+  }
+}
+.form__btn {
+  position: absolute;
+  bottom: -532px;
+  /* button height + cart height */
+  /* pt + button height + pb */
+  height: 110px;
+  width: 100%;
+  border-top: 1px solid var(--divider);
+  padding: 24px 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.form__btn button {
+  height: 46px;
+  width: 156px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.form__btn button:hover {
+  opacity: 0.9;
+  font-weight: 700;
+}
+.form__btn .form__btn--previous {
+  color: var(--btn-previous);
+  text-align: left;
+}
+.form__btn .form__btn--previous span {
+  margin-right: 12.5px;
+}
+.form__btn .form__btn--previous[disabled] {
+  display: none;
+}
+.form__btn .form__btn--next {
+  color: var(--btn-next);
+  background: var(--btn-next-bg);
+}
+.form__btn .form__btn--next span {
+  margin-left: 13.5px;
+}
+.form__btn .form__btn--next.first-step {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .form__btn {
+    position: initial;
+    border-top: 2px solid var(--divider);
+  }
+  .form__btn button {
+    width: 174px;
+  }
+  .form__btn .form__btn--next.first-step {
+    width: 174px;
+    position: absolute;
+    right: 0;
   }
 }
 .cart {

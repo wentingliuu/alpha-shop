@@ -126,6 +126,7 @@ footer {
 
       &__left, &__right {
         margin-top: 0;
+        margin-bottom: 0;
       }
       &__left {
         grid-column: 1 / 7;
@@ -146,7 +147,7 @@ footer {
   }
   
   footer {
-    display: initial;
+    display: block;
     height: 284px;
     background: var(--footer-bg);
   }
