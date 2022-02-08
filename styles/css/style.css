@@ -104,6 +104,9 @@ a:focus {
   --icon-cart: url("../../images/icon-cart@3x.png");
   --icon-mode: url("../../images/icon-mode@3x.png");
   --hamburger: url("../../images/hamburger@3x.png");
+  --social-fb: url("../../images/social-fb@3x.png");
+  --social-ig: url("../../images/social-ig@3x.png");
+  --social-wa: url("../../images/social-wa@3x.png");
 }
 
 [data-theme=dark] {
@@ -147,6 +150,9 @@ a:focus {
   --icon-cart: url("../../images/d-icon-cart@3x.png");
   --icon-mode: url("../../images/d-icon-mode@3x.png");
   --hamburger: url("../../images/d-hamburger@3x.png");
+  --social-fb: url("../../images/d-social-fb@3x.png");
+  --social-ig: url("../../images/d-social-ig@3x.png");
+  --social-wa: url("../../images/d-social-wa@3x.png");
 }
 
 /* ===== general ===== */
@@ -275,8 +281,6 @@ footer {
 
   footer {
     display: block;
-    height: 284px;
-    background: var(--footer-bg);
   }
 }
 .d-none {
@@ -885,6 +889,79 @@ header nav .nav__icons .nav__icon--mode {
   .cart__item .item__info .item__detail {
     align-items: start;
   }
+}
+footer {
+  height: 284px;
+  background: var(--footer-bg);
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.75vw;
+  height: 100%;
+}
+footer .container .footer__brand {
+  display: block;
+  width: 175.49px;
+  height: 31px;
+  background: var(--img-logo);
+  background-size: contain;
+  grid-column: 1/4;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+footer .container .footer__content {
+  grid-column: 4/13;
+  display: flex;
+  margin-top: 64px;
+}
+footer .container .footer__content div {
+  width: 25%;
+}
+footer .container .footer__content div .footer__items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  color: var(--footer-color);
+}
+footer .container .footer__content div .footer__items .footer__link {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 17px;
+  font-weight: 300;
+}
+footer .container .footer__content div .footer__items .footer__link--phone {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+footer .container .footer__content div .footer__items .footer__item {
+  width: 104px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer .container .footer__content div .footer__items .footer__item .footer__icon--fb {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--social-fb);
+  background-size: contain;
+}
+footer .container .footer__content div .footer__items .footer__item .footer__icon--ig {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--social-ig);
+  background-size: contain;
+}
+footer .container .footer__content div .footer__items .footer__item .footer__icon--wa {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: var(--social-wa);
+  background-size: contain;
 }
 
 /*# sourceMappingURL=style.css.map */

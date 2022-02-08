@@ -87,13 +87,13 @@ header {
       opacity: 0;
 
       .nav__icon--search {
-        @include img-setting(24px, 24px, var(--icon-search));
+        @include icon-setting(var(--icon-search));
       }
       .nav__icon--cart {
-        @include img-setting(24px, 24px, var(--icon-cart));
+        @include icon-setting(var(--icon-cart));
       }
       .nav__icon--mode {
-        @include img-setting(24px, 24px, var(--icon-mode));
+        @include icon-setting(var(--icon-mode));
       }
     }
   }

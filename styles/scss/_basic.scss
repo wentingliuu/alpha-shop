@@ -59,6 +59,14 @@ p {
   background-size: contain;
 }
 
+@mixin icon-setting($icon) {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: $icon;
+  background-size: contain;
+}
+
 @mixin getStepNum($num) {
   @for $i from 1 through $num { 
     &:nth-of-type(#{$i}) .step__circle::after {
@@ -148,8 +156,6 @@ footer {
   
   footer {
     display: block;
-    height: 284px;
-    background: var(--footer-bg);
   }
 }
 
