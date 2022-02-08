@@ -70,8 +70,7 @@ p {
 /* ===== basic settings ===== */
 .container {
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -84,15 +83,18 @@ main {
     font-size: 24px;
     width: 100%;
   }
-  .main__content__left{
-    margin-top: 24px;
-
-    form {
+  .main__content {
+    &__left {
       margin-top: 24px;
+
+      form {
+        margin-top: 24px;
+        position: relative;
+      } 
     }
-  }
-  .main__content__right{
-    margin-top: 32px;
+    &__right {
+      margin: 32px 0;
+    }
   }
 }
 
@@ -116,7 +118,7 @@ footer {
       padding-top: 80px;
       font-size: 32px;
     }
-    .main__content{
+    .main__content {
       margin-top: 48px;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -134,9 +136,6 @@ footer {
           .form__content {
             /* right_content 減 stepper 減 margin-top 減 form_btn */
             height: calc(492px - 24px - 64px - 72px);
-          }
-          .form__btn {
-            height: 72px;
           }
         }
       }

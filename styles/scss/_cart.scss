@@ -2,12 +2,13 @@
   background: var(--cart-bg);
   border: 1px solid var(--cart-outline);
   border-radius: 8px;
-  padding: 16px;
+  padding: 0 16px;
 
   .cart__title {
     display: none;
   }
   .cart__items {
+    padding-bottom: 16px;
     border-bottom: 1px solid var(--cart-outline);
   }
   .cart__shipping,
@@ -34,7 +35,7 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
-  margin-bottom: 18px;
+  margin-top: 18px;
 
   img {
     width: 100px;
@@ -101,6 +102,10 @@
     }
     .cart__items {
       margin-top: 34px;
+      padding-bottom: 0;
+      .cart__item {
+        margin-bottom: 32px;
+      }
     }
 
     .cart__shipping,
@@ -112,8 +117,6 @@
 
 @media screen and (min-width: 1024px) {
   .cart__item {
-    margin-bottom: 32px;
-
     .item__info {
       width: calc(100% - 100px - 21px);
       flex-direction: row;

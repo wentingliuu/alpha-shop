@@ -205,8 +205,7 @@ header .nav__brand {
 /* ===== basic settings ===== */
 .container {
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -224,9 +223,10 @@ main .main__content__left {
 }
 main .main__content__left form {
   margin-top: 24px;
+  position: relative;
 }
 main .main__content__right {
-  margin-top: 32px;
+  margin: 32px 0;
 }
 
 footer {
@@ -267,9 +267,6 @@ footer {
   main .main__content__left form .form__content {
     /* right_content 減 stepper 減 margin-top 減 form_btn */
     height: 332px;
-  }
-  main .main__content__left form .form__btn {
-    height: 72px;
   }
   main .main__content__right {
     grid-column: 8/13;
@@ -539,6 +536,9 @@ header nav .nav__icons .nav__icon--mode {
   justify-content: space-between;
   /* input 樣式調整 */
 }
+.form__part > div:last-of-type {
+  margin-bottom: 0;
+}
 .form__part > div label {
   font-size: 12px;
   line-height: 16px;
@@ -713,12 +713,13 @@ header nav .nav__icons .nav__icon--mode {
   background: var(--cart-bg);
   border: 1px solid var(--cart-outline);
   border-radius: 8px;
-  padding: 16px;
+  padding: 0 16px;
 }
 .cart .cart__title {
   display: none;
 }
 .cart .cart__items {
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--cart-outline);
 }
 .cart .cart__shipping,
@@ -745,7 +746,7 @@ header nav .nav__icons .nav__icon--mode {
   display: flex;
   justify-content: space-between;
   height: 100px;
-  margin-bottom: 18px;
+  margin-top: 18px;
 }
 .cart__item img {
   width: 100px;
@@ -806,6 +807,10 @@ header nav .nav__icons .nav__icon--mode {
   }
   .cart .cart__items {
     margin-top: 34px;
+    padding-bottom: 0;
+  }
+  .cart .cart__items .cart__item {
+    margin-bottom: 32px;
   }
   .cart .cart__shipping,
 .cart .cart__sum {
@@ -813,9 +818,6 @@ header nav .nav__icons .nav__icon--mode {
   }
 }
 @media screen and (min-width: 1024px) {
-  .cart__item {
-    margin-bottom: 32px;
-  }
   .cart__item .item__info {
     width: calc(100% - 100px - 21px);
     flex-direction: row;
