@@ -30,6 +30,7 @@ const nextBtn = btnPanel.querySelector('.form__btn--next')
 const cart = document.getElementById('cart')
 
 let currentStep = 0
+let currentShippingFee = 0
 
 /* ===== Functions ===== */
 // 0. 轉換 $$ 符號
@@ -128,8 +129,38 @@ function cartItemQty (e) {
     qtyNode.innerHTML = thisQty
     priceNode.innerHTML = formatter.format(Number(thisPrice) * Number(thisQty))
   }
+  totalAmount()
+}
+
+// 5. 運費計算
+function deliveryFee (e) {
+  if (e.target.type === 'radio') {
+    const fee = Number(e.target.dataset.fee)
+    if (fee === 0) {
+      cart.querySelector('.cart__shipping--fee').innerHTML = '免費'
+      currentShippingFee = 0
+    } else if (fee === 500) {
+      cart.querySelector('.cart__shipping--fee').innerHTML = '$500'
+      currentShippingFee = 500
+    }
+    totalAmount()
+  }
+}
+
+// 6. 總價計算
+function totalAmount () {
+  const cartItem = cart.querySelectorAll('.cart__item')
+  const sumPrice = cart.querySelector('.cart__sum--price')
+  let sum = 0
+
+  cartItem.forEach(item => {
+    const itemPrice = item.querySelector('.item__price')
+    sum += Number(itemPrice.innerHTML.split('$')[1].split(',').join(''))
+  })
+  sumPrice.innerHTML = formatter.format(sum + currentShippingFee)
 }
 
 /* ===== Event Listener ===== */
 btnPanel.addEventListener('click', switchFormStep)
 cart.addEventListener('click', cartItemQty)
+form.addEventListener('click', deliveryFee)
