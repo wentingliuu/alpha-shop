@@ -871,6 +871,10 @@ header nav .nav__icons .nav__icon--mode {
   background: var(--cart-btn-bg);
   text-align: center;
   font-weight: 700;
+  cursor: pointer;
+}
+.cart__item .item__info .item__detail .item__quantity--btn:hover {
+  box-shadow: 1px 1px 1px 1px rgba(100, 100, 100, 0.1);
 }
 .cart__item .item__info .item__price {
   font-weight: bold;

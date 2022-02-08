@@ -27,10 +27,19 @@ const steps = stepControl.querySelectorAll('.step')
 const btnPanel = document.querySelector('.form__btn')
 const prevBtn = btnPanel.querySelector('.form__btn--previous')
 const nextBtn = btnPanel.querySelector('.form__btn--next')
+const cart = document.getElementById('cart')
 
 let currentStep = 0
 
 /* ===== Functions ===== */
+// 0. 轉換 $$ 符號
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0
+})
+
+// formatter.format(2500)
 // 1. 載入購物車商品
 ; (function () {
   products.forEach((product) => {
@@ -102,5 +111,25 @@ function switchBtnStyle () {
   }
 }
 
+// 4. 調整購物車商品數量 & item 小計
+function cartItemQty (e) {
+  if (e.target.classList.contains('item__quantity--btn')) {
+    const thisItem = e.target.closest('.cart__item')
+    const qtyNode = thisItem.querySelector('.item__quantity--number')
+    const priceNode = thisItem.querySelector('.item__price')
+    const thisPrice = priceNode.dataset.price
+    let thisQty = qtyNode.innerHTML
+
+    if (e.target.classList.contains('item__quantity--minus') && thisQty > 0) {
+      thisQty--
+    } else if (e.target.classList.contains('item__quantity--plus')) {
+      thisQty++
+    }
+    qtyNode.innerHTML = thisQty
+    priceNode.innerHTML = formatter.format(Number(thisPrice) * Number(thisQty))
+  }
+}
+
 /* ===== Event Listener ===== */
 btnPanel.addEventListener('click', switchFormStep)
+cart.addEventListener('click', cartItemQty)
