@@ -74,13 +74,14 @@
         line-height: 26px;
 
         &--number {
-          color: var(--cart-btn-color);
+          font-weight: 700;
         }
         &--btn {
           width: 26px;
           height: 27px;
           border-radius: 50%;
           background: var(--cart-btn-bg);
+          color: var(--cart-btn-text);
           text-align: center;
           font-weight: 700;
 

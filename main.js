@@ -28,6 +28,7 @@ const btnPanel = document.querySelector('.form__btn')
 const prevBtn = btnPanel.querySelector('.form__btn--previous')
 const nextBtn = btnPanel.querySelector('.form__btn--next')
 const cart = document.getElementById('cart')
+const darkModeBtn = document.querySelector('.nav__icon--mode')
 
 let currentStep = 0
 let currentShippingFee = 0
@@ -160,7 +161,18 @@ function totalAmount () {
   sumPrice.innerHTML = formatter.format(sum + currentShippingFee)
 }
 
+// 7. 暗黑模式
+function darkModeToggle (e) {
+  if (!e.target.classList.contains('dark-mode')) {
+    document.documentElement.setAttribute('data-theme', 'dark')
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light')
+  }
+  e.target.classList.toggle('dark-mode')
+}
+
 /* ===== Event Listener ===== */
 btnPanel.addEventListener('click', switchFormStep)
 cart.addEventListener('click', cartItemQty)
 form.addEventListener('click', deliveryFee)
+darkModeBtn.addEventListener('click', darkModeToggle)

@@ -97,6 +97,7 @@ a:focus {
   --cart-outline: #F0F0F5;
   --cart-btn-color: #000000;
   --cart-btn-bg: #F0F0F5;
+  --cart-btn-text: #000000;
   --cart-text-light: #2A2A2A;
   --cart-text-bold: #000000;
   --img-logo: url("../../images/logo@3x.png");
@@ -143,6 +144,7 @@ a:focus {
   --cart-outline: rgba(255, 255, 255, 0.2);
   --cart-btn-color: #333333;
   --cart-btn-bg: #808080;
+  --cart-btn-text: #333333;
   --cart-text-light: #FFFFFF;
   --cart-text-bold: #FFFFFF;
   --img-logo: url("../../images/d-logo@3x.png");
@@ -622,7 +624,7 @@ header nav .nav__icons .nav__icon--mode {
 }
 .form__part .form__row--shipping input[type=radio]:checked {
   box-shadow: inset 0 0 0 5px var(--form-shipment-checked-btn);
-  background: var(--body-bg);
+  background: #FFFFFF;
 }
 .form__part .form__row--shipping input[type=radio]:checked::after {
   content: "";
@@ -862,13 +864,14 @@ header nav .nav__icons .nav__icon--mode {
   line-height: 26px;
 }
 .cart__item .item__info .item__detail .item__quantity--number {
-  color: var(--cart-btn-color);
+  font-weight: 700;
 }
 .cart__item .item__info .item__detail .item__quantity--btn {
   width: 26px;
   height: 27px;
   border-radius: 50%;
   background: var(--cart-btn-bg);
+  color: var(--cart-btn-text);
   text-align: center;
   font-weight: 700;
   cursor: pointer;
