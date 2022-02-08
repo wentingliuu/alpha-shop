@@ -64,7 +64,7 @@
         <!-- left part-->
         <div class="main__content__left">
           <!-- stepper -->
-          <div class="stepper">
+          <div id="stepper" class="stepper">
             <div class="step active">
               <div class="step__circle"></div>
               <h4 class="step__label">寄送地址</h4>
@@ -82,7 +82,7 @@
           </div>
         
           <!-- form -->
-          <form>
+          <form id="form">
             <div class="form__content">
               <div class="form__part">
                 <h2 class="form__title">寄送地址</h2>
@@ -188,8 +188,8 @@
         
             <!-- button -->
             <div class="form__btn">
-              <button class="form__btn--previous"><span class="arrow">&longleftarrow;</span>上一步</button>
-              <button class="form__btn--next">下一步<span class="arrow">&longrightarrow;</span></button>
+              <button class="form__btn--previous" disabled><span class="arrow">&longleftarrow;</span>上一步</button>
+              <button class="form__btn--next first-step">下一步<span class="arrow">&longrightarrow;</span></button>
             </div>
           </form>
         </div>
