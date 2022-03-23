@@ -96,8 +96,6 @@ function switchFormStep (e) {
 
 // 3. 修改 button 寬度 & 文字內容
 function switchBtnStyle () {
-  console.log(currentStep)
-  console.log(prevBtn)
   if (currentStep === 0) {
     prevBtn.setAttribute('disabled', true)
     nextBtn.classList.add('first-step')
@@ -171,8 +169,16 @@ function darkModeToggle (e) {
   e.target.classList.toggle('dark-mode')
 }
 
+// 8. 送出結帳
+function checkOut () {
+  if (nextBtn.innerHTML === '確認下單') {
+    alert('結帳金額為 ' + cart.querySelector('.cart__sum--price').innerHTML + ' 元，謝謝您的消費！')
+  }
+}
+
 /* ===== Event Listener ===== */
 btnPanel.addEventListener('click', switchFormStep)
+btnPanel.addEventListener('click', checkOut)
 cart.addEventListener('click', cartItemQty)
 form.addEventListener('click', deliveryFee)
 darkModeBtn.addEventListener('click', darkModeToggle)
