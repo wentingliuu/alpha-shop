@@ -75,7 +75,9 @@ function switchFormStep (e) {
   const prevPart = formParts[currentStep - 1]
 
   if (e.target.classList.contains('form__btn--next')) {
-    if (currentStep === 2) return
+    if (currentStep === 2) {
+      return checkOut()
+    }
     thisStep.classList.toggle('active')
     thisStep.classList.toggle('checked')
     nextStep.classList.toggle('active')
@@ -171,14 +173,11 @@ function darkModeToggle (e) {
 
 // 8. 送出結帳
 function checkOut () {
-  if (nextBtn.innerHTML === '確認下單') {
-    alert('結帳金額為 ' + cart.querySelector('.cart__sum--price').innerHTML + ' 元，謝謝您的消費！')
-  }
+  alert('結帳金額為 ' + cart.querySelector('.cart__sum--price').innerHTML + ' 元，謝謝您的消費！')
 }
 
 /* ===== Event Listener ===== */
 btnPanel.addEventListener('click', switchFormStep)
-btnPanel.addEventListener('click', checkOut)
 cart.addEventListener('click', cartItemQty)
 form.addEventListener('click', deliveryFee)
 darkModeBtn.addEventListener('click', darkModeToggle)
