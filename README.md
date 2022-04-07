@@ -7,18 +7,18 @@ An e-shop checkout page built with CSS pre-processor [Sass/SCSS](https://sass-la
 
 
 ## Features
-### RWD
+#### RWD
 Different display design on mobile phone, tablet and desktop.
 ![RWD](https://github.com/wentingliuu/alpha-shop/blob/main/images/alphashop-rwd.gif)
 
-### Light/Dark Theme
+#### Light/Dark Theme
 2 distinguish color style for users to choose.
 ![Theme](https://github.com/wentingliuu/alpha-shop/blob/main/images/alphashop-theme.gif)
 
-### Form Step
+#### Form Step
 Divided form into 3 part, user could partially fill in the form. The stepper would indicate which part is currently at.
 ![Form Step](https://github.com/wentingliuu/alpha-shop/blob/main/images/alphashop-step.gif)
 
-### Cart Amount Calculation
+#### Cart Amount Calculation
 Total price would be dynamically adjusted based on the quantity of goods and shipping costs.
 ![Amount](https://github.com/wentingliuu/alpha-shop/blob/main/images/alphashop-amount.gif)
